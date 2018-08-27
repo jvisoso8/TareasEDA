@@ -53,11 +53,14 @@ public class MS {
     }
      
      public static void main(String[] args) {
+        //Numero de objetos en el arreglo es igual a x.
+         
+         int x = 10000;
         
-        int [] a = new int[1000000];
+        int [] a = new int[x];
         Random rand = new Random();
-        for(int i =0; i<1000000; i++){ 
-            int  n = rand.nextInt(1000000);
+        for(int i =0; i<x; i++){ 
+            int  n = rand.nextInt(x);
             a[i]=n;
         }
         //imprime(a);
