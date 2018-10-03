@@ -6,6 +6,7 @@ import arboles.NodoDoble;
 public class AB {
 	
 	public NodoAB raiz;
+	boolean bo;
 	
 	public AB() {
 		raiz = null;
@@ -25,7 +26,7 @@ public class AB {
 	}
 	
 	public boolean ins(int dato, NodoAB ap, NodoAB apPant) {
-		boolean bo;
+		
 		
 		
 		if(dato<ap.info) {
@@ -50,6 +51,7 @@ public class AB {
 					else {
 						ap.fe=-2;
 						rota(ap,apPant); 
+						return false;
 					}
 				}
 			}
@@ -78,6 +80,7 @@ public class AB {
 							//rotaciones 
 							ap.fe=2;
 							rota(ap,apPant);
+							return false;
 						}
 					}
 				}
@@ -96,7 +99,7 @@ public class AB {
 			aux = ap.der;
 			if(ap.der.fe==-1) {
 				//DI
-				System.out.println("DI");
+				//System.out.println("DI");
 				NodoAB aux1 = aux.izq;
 				aux1.der=aux;
 				aux1.izq = ap;
@@ -121,7 +124,7 @@ public class AB {
 			}
 			else {
 				//DD
-				System.out.println("ap:" + ap.info + " aux:" + aux.info + " Raiz" + raiz.info);
+				//System.out.println("ap:" + ap.info + " aux:" + aux.info + " Raiz" + raiz.info);
 				
 				aux.izq= ap;
 				ap.der = null;
@@ -167,7 +170,7 @@ public class AB {
 			}
 			else {
 				//ID
-				System.out.println("ID");System.out.println("DI");
+				//System.out.println("ID");System.out.println("DI");
 				NodoAB aux1 = aux.der;
 				aux1.izq=aux;
 				aux1.der = ap;
@@ -208,15 +211,27 @@ public class AB {
 		AB t = new AB();
 		
 		t.inserta(10);
+		//t.imp(t.raiz);
+		
 		t.inserta(20);
+		//t.imp(t.raiz);
+		
 		t.inserta(30);
+		//t.imp(t.raiz);
+		
 		t.inserta(40);
+		//t.imp(t.raiz);
+		
 		t.inserta(50);
+		//t.imp(t.raiz);
 		
 		t.inserta(8);
-		t.inserta(1);
-		t.inserta(2);
+		//t.imp(t.raiz);
 		
+		t.inserta(1);
+		//t.imp(t.raiz);
+		
+		t.inserta(2);
 		t.imp(t.raiz);
 		
 		
